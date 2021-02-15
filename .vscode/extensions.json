@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "eg2.vscode-npm-script",
+    "ms-vscode.atom-keybindings",
+    "orta.vscode-jest",
+    "vscode-icons-team.vscode-icons",
+    "wayou.vscode-todo-highlight"
+  ],
+  "unwantedRecommendations": [
+    "dbaeumer.jshint",
+    "firefox-devtools.vscode-firefox-debug"
+  ]
+}
