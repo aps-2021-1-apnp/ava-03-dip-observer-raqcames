@@ -1,18 +1,18 @@
-import { Produto } from './Produto'
+import { IObserverCart } from './Cart'
+import { IObserverWishlist } from './Wishlist'
+import { Product } from './Product'
 
-export class Marketing {
-  houveAdicao(p: Produto) {
-    console.info(`MARKETING: ${p.descricao} foi adicionado`)
+export class Marketing implements IObserverCart, IObserverWishlist {
+  whenAdd(p: Product) {
+    console.info(`MARKETING: ${p.description} foi adicionado`)
   }
-  houveRemocao(p: Produto) {
-    console.info(`MARKETING: ${p.descricao} foi removido`)
-
+  whenRemove(p: Product) {
+    console.info(`MARKETING: ${p.description} foi removido`)
   }
-  houveCompra(produtos: Produto[]) {
-    console.info(`MARKETING: ${produtos.length} comprado(s)`)
+  whenPurchase(products: Product[]) {
+    console.info(`MARKETING: ${products.length} comprado(s)`)
   }
-  houveAbandono(produtos: Produto[]) {
-    console.info(`MARKETING: ${produtos.length} abandonado(s)`)
-
+  whenAbandon(products: Product[]) {
+    console.info(`MARKETING: ${products.length} abandonado(s)`)
   }
 }

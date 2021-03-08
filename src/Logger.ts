@@ -1,18 +1,19 @@
-import { Produto } from './Produto'
+import { IObserverCart } from './Cart'
+import { IObserverWishlist } from './Wishlist'
+import { Product } from './Product'
 
-export class Logger {
-  houveAdicao(p: Produto) {
-    console.info(`LOGGER: ${p.descricao} foi adicionado`)
-  }
-  houveRemocao(p: Produto) {
-    console.info(`LOGGER: ${p.descricao} foi removido`)
 
+export class Logger implements IObserverCart, IObserverWishlist {
+  whenAdd(p: Product) {
+    console.info(`LOGGER: ${p.description} foi adicionado`)
   }
-  houveCompra(produtos: Produto[]) {
-    console.info(`LOGGER: ${produtos.length} comprado(s)`)
+  whenRemove(p: Product) {
+    console.info(`LOGGER: ${p.description} foi removido`)
   }
-  houveAbandono(produtos: Produto[]) {
-    console.info(`LOGGER: ${produtos.length} abandonado(s)`)
-
+  whenPurchase(products: Product[]) {
+    console.info(`LOGGER: ${products.length} comprado(s)`)
+  }
+  whenAbandon(products: Product[]) {
+    console.info(`LOGGER: ${products.length} abandonado(s)`)
   }
 }
